@@ -1,0 +1,121 @@
+% David Snyder 2012
+% resume.tex
+
+\documentclass[10pt,letterpaper]{article}
+\usepackage[letterpaper,margin=0.75in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{mdwlist}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\pagestyle{empty}
+\setlength{\tabcolsep}{0em}
+
+% indentsection style, used for sections that aren't already in lists
+% that need indentation to the level of all text in the document
+\newenvironment{indentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% opposite of above; bump a section back toward the left margin
+\newenvironment{unindentsection}[1]%
+{\begin{list}{}%
+	{\setlength{\leftmargin}{-0.5#1}}%
+	\item[]%
+}
+{\end{list}}
+
+% format two pieces of text, one left aligned and one right aligned
+\newcommand{\headerrow}[2]
+{\begin{tabular*}{\linewidth}{l@{\extracolsep{\fill}}r}
+	#1 &
+	#2 \\
+\end{tabular*}}
+
+% and the actual content starts here
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{David C. Snyder}}
+
+2718 E. 22nd St.\ \ \textbullet
+\ \ Austin, TX 78722 \ \ \textbullet \ \ (512) 659-6475 
+\\
+dsnyder@cs.utexas.edu \textbullet
+\ \ github.com/davidsnyder
+\end{center}
+
+\hrule
+\vspace{-0.4em}
+\subsection*{Experience}
+
+\begin{itemize}
+	\parskip=0.1em
+
+	\item
+	\headerrow
+		{\textbf{Infochimps Inc.}}
+		{\textbf{Austin, Texas}}
+	\\
+	\headerrow
+		{\emph{Software Developer}}
+		{\emph{May 2010 -- January 2012}}
+	\begin{itemize*}
+		\item Implemented repeatable workflows for processing large datasets using a variety of technologies
+                  including Hadoop/MapReduce with Apache Pig and Hadoop streaming.
+		\item Coded and deployed Ruby on Rails web applications in a production environment.
+                \item Built a publishing pipeline to streamline the process of uploading large datasets to HBase, ElasticSearch, and MySQL databases.
+                \item Extended the Infochimps API platform to respond to additional endpoints and implemented an authentication layer with Redis. 
+		\item Implemented a filesystem abstraction library for Amazon S3 and the Hadoop Distributed File System with Ruby/JRuby.
+		\item Focused on repeatable deploys/systems integration with Opscode Chef on Amazon EC2 backed clusters.                  
+	\end{itemize*}
+\end{itemize}
+
+\vspace{-0.4em}
+\subsection*{Education}
+
+\begin{itemize}
+	\parskip=0.1em
+
+	\item 
+	\headerrow
+		{\textbf{The University of Texas at Austin}}
+		{\textbf{Austin, Texas}}
+	\\
+	\headerrow
+		{\emph{College of Natural Science, B.A. Computer Science, minor Scandinavian Studies}}
+		{\emph{2008 -- 2012 (Expected)}}
+\end{itemize}
+
+\vspace{-0.4em}
+\subsection*{Projects}
+
+\begin{indentsection}{\parindent}
+\hyphenpenalty=1000
+\begin{itemize*}
+        \item Wrote a Clojure utility to convert WGS-84 lat/lng coordinates to quadkeys.
+	\item Wrote a library of Java functions (UDFs) for Apache Pig to tile GeoJSON polygons.          
+        \item Ported a Twitter tokenizer from Python to Scala as part of the University of Texas at Austin Comp. Linguistics TextGrounder project.
+        \item Participated in the April 2011 3DayStartup Austin division competition and deployed a Rails group lunch voting app in under 48 hours.
+        \item Rewrote the 3DayStartup voting app to be realtime with MongoDB, Websockets, Node.js, and Redis.
+\end{itemize*}
+\end{indentsection}
+
+\vspace{-0.4em}
+\subsection*{Skills}
+
+\begin{indentsection}{\parindent}
+\hyphenpenalty=1000
+\begin{itemize*}
+        \item 2+ years experience with Ruby
+        \item Familiar with Java, C, Javascript, Clojure, Python                    
+        \item Datastores: MySQL, Redis, MongoDB, HBase
+        \item Web Frameworks: Ruby on Rails and Node.js      
+        \item Cloud deployment and automation with Amazon EC2 and Opscode Chef
+        \item Use Emacs/Unix development environment
+\end{itemize*}
+\end{indentsection}
+
+\end{document}
